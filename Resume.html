@@ -6,27 +6,39 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <title>Eugene Faison - Resume</title>
+  <link rel="icon" type="image/x-icon" href="img/GRC_logo.png">
+  <title>Homepage.</title>
+  <script type="text/javascript" src="js/set-theme.js"></script>
+  <!-- scroll reveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark" role="navigation">
+  <!-- Navbar Brand & Toggler -->
+  <div class="navbar-header" id="navbar-header">
+    <a class="navbar-brand navbar-left px-3" href="https://www.greenriver.edu/" target="_blank"><img
+            alt="Green River College's logo" src="img/GRC_logo_navbar.png" width="70"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+            aria-controls="navbar-toggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span></button>
+  </div>
 
-<div class="container-fluid">
+  <div class="collapse navbar-collapse" id="navbar-toggler">
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
       <a class="nav-link" href="index.html">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="Resume.html">Resume</a>
+      <a class="nav-link active" href="Resume.html">Resume</a>
     </li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Projects</a>
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Portfolio</a>
       <ul class="dropdown-menu">
         <li><a class="dropdown-item" href="https://cicada.greenriverdev.com">Application Tracking System</a></li>
-        <li><a class="dropdown-item" href="#">Another link</a></li>
-        <li><a class="dropdown-item" href="Project%20Spotlight.html">Project Overviews</a></li>
+        <li><a class="dropdown-item" href="https://gene7.greenriverdev.com/weatherApp/">Weather App</a></li>
+        <li><a class="dropdown-item" href="https://gene7.greenriverdev.com/fAIson/">fAIson</a></li>
       </ul>
     </li>
     <li class="nav-item">
@@ -35,12 +47,19 @@
   </ul>
 </div>
 
+  <!-- Dark Mode Toggler -->
+  <div id="darkmode-container" class="nav-item text-center px-3" hidden="true">
+    <input type="checkbox" id="darkmode-toggle"></input>
+    <label id="darkmode-label" for="darkmode-toggle"></label>
+  </div>
+
 </nav>
 
-<div class="container pt-5">
-  <h1 class="text-center">Eugene Faison</h1>
 
-  <p class="text-center">faison.eugene@student.greenriver.edu | (504)-261-4234 | <a href="https://github.com/Gene7Him" target="_blank">GitHub</a> | <a href="https://www.linkedin.com/in/eugene-faison-399b83272" target="_blank">LinkedIn</a></p>
+<div class="container pt-5">
+  <h1 class="pt-5 text-center">Eugene Faison</h1>
+
+  <p class="text-center">faison.eugene@student.greenriver.edu | (504)-261-4234 | <a class="link-text" href="https://github.com/Gene7Him" target="_blank">GitHub</a> | <a class="link-text" href="https://www.linkedin.com/in/eugene-faison-399b83272" target="_blank">LinkedIn</a></p>
 
   <h2 class="text-center">Summary</h2>
   <p class="lead">Motivated software development & cybersecurity student and military veteran pursuing a challenging role as a software developer. Combining a strong background in military discipline and a passion for coding, I am eager to contribute my skills and knowledge to create innovative software solutions. Demonstrated ability to quickly grasp complex concepts and collaborate effectively in team environments. Eager to apply my problem-solving abilities, attention to detail, and strong work ethic to contribute to a dynamic software development team. Committed to continuous learning, collaboration, and delivering high-quality solutions. </p>
@@ -50,7 +69,7 @@
   <p>Bachelor of Applied Science, expected June 2025</p>
   <p>Major: Software Development (Applied Computer Science) & CyberSecurity and Networking, GPA: 3.2</p>
   <p>Relevant Coursework:</p>
-  <ul>
+  <ul class="info">
     <li>Obj-Oriented Programming</li>
     <li>Elementary Data Structures</li>
     <li>Web Programming with JavaScript</li>
@@ -66,19 +85,19 @@
   </ul>
 
 
-  <h2 class="text-center">Experience</h2>
+  <h2 class="text-center name">Experience</h2>
 
-  <h5 class="text-center">Data Analytics Capstone</h5>
+  <h5 class="text-center info">Data Analytics Capstone</h5>
 
-  <ul>
+  <ul class="info">
     <li>Utilized pair programming to learn how to work ing sprints with others from around the world</li>
     <li>Analyzed a large dataset, and used a visualization tool called tableau to present my findings</li>
 
   </ul>
 
-  <h5 class="text-center">Personal Portfolio</h5>
+  <h5 class="text-center info">Personal Portfolio</h5>
 
-  <ul>
+  <ul class="info">
     <li>Added navigation bar with links to my homepage, resume, a software project and form to contact me</li>
     <li>Created pages with different images and links of where I host my code</li>
     <li>Used PHP to receive messages from the user using my website</li>
@@ -87,8 +106,8 @@
   </ul>
 
 
-  <h3 class="text-left">Skills & Languages</h3>
-  <ul>
+  <h3 class="text-left name">Skills & Languages</h3>
+  <ul class="info">
     <li>Bootstrap</li>
     <li>HTML</li>
     <li>CSS</li>
@@ -110,8 +129,8 @@
 
 
 
-    <h2 class="text-center">Achievements</h2>
-    <ul>
+    <h2 class="text-center name">Achievements</h2>
+    <ul class="info">
       <li>Green River College Foundation Scholarship, Awardee, 2023</li>
       <li>ARMY ACHIEVEMENT MEDAL (x2), 2019/2021</li>
     </ul>
@@ -119,7 +138,15 @@
   </div>
 
 
+  <script>
+    ScrollReveal().reveal('.name', { duration: 1900 }, { origin: 'top' });
+    ScrollReveal().reveal('.info', { duration: 2000 }, { origin: 'top' });
+  </script>
 
+  <!-- typed js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Form validation and dark mode script -->
+  <script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>

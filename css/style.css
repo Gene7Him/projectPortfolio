@@ -121,49 +121,9 @@ label#darkmode-label:active:after {
     width: 40px;
 }
 
-/* ------------------------------Homepage Styling------------------------------ */
-/* Reminders Section*/
-#reminders {
-    text-align: center;
-    width: 100%;
-    padding: 15px;
-}
 
-/* New App Button */
-#newApp {
-    padding: 10px;
-    width: 35%;
-    float: right;
-    text-align: center;
-}
 
-#newApp a {
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-}
 
-/* Account Settings Button */
-#accountSettings {
-    float: right;
-    padding: 5px;
-}
-
-/* Resources and Links */
-.welcome {
-    margin: auto;
-    text-align: center;
-    padding: 15px;
-}
-
-/* ------------------------------Admin Homepage Styling------------------------------ */
-#users-table tr:hover td {
-    background-color: #f1f1f1;
-}
-
-body.darkMode #users-table tr:hover td {
-    background-color: #333333;
-}
 
 /* ------------------------------Form Styling------------------------------ */
 /* Form container (grouping all form sections) */
@@ -234,3 +194,9 @@ td {
     column-count: 2;
     color: #2C882B;
 }
+
+html.sr .info {
+    visibility: hidden;}
+
+html.sr .name {
+    visibility: hidden;}
