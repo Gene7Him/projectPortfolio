@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:color="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,7 +9,6 @@
     <link rel="icon" type="image/x-icon" href="img/GRC_logo.png">
     <title>Homepage.</title>
     <script type="text/javascript" src="js/set-theme.js"></script>
-
 </head>
 <body>
 
@@ -27,7 +26,7 @@
         <!-- Links -->
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="Resume.html">Resume</a>
@@ -41,7 +40,7 @@
                 </ul>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="guestbook.html">GuestBook</a>
+                <a class="nav-link active" href="guestbook.html">GuestBook</a>
             </li>
         </ul>
     </div>
@@ -54,77 +53,72 @@
 
 </nav>
 
+
+<?php include 'dataProcessing/header.php'; ?>
+
 <div class="container-fluid">
     <div class="row col-12">
         <header class="pt-5">
-            <h1 class="pt-5">Eugene Faison</h1>
+            <h1 class="pt-5">GuestBook</h1>
         </header>
     </div>
 </div>
 
 
-<div class="pt-5 mx-auto col-lg-6 col-md-8 col-sm-12 col-12">
-<img class="img-fluid img-thumbnail" src="img/pic.jpg" alt="Me">
+<div class="row justify-content-center pt-5">
+    <form class="form-container pt-0 col-lg-6 col-md-8 col-sm-12 col-12" id="contactForm">
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input class="form-control" type="email" id="email" name="email" required>
+
+        <div class="mb-3">
+            <label for="message">Message:</label>
+            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="button" id="submit-button" onclick="submitForm()">Submit</button>
+    </form>
+
+
+
+
+    <?php include 'dataProcessing/guestbook_display.php'; ?>
+
+
+    <script>
+        function submitForm() {
+            // Get form data
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+
+
+            // Create a FormData object and append form data
+            var formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('message', message);
+
+            // Send data to PHP script using XMLHttpRequest
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'dataProcessing/guessbooksubmit.php', true);
+            xhr.onload = function () {
+                if (xhr.status == 200) {
+                    alert('Message sent successfully!');
+                    // You can add additional logic here if needed
+                } else {
+                    alert('Error sending message. Please try again later.');
+                }
+            };
+            xhr.send(formData);
+        }
+    </script>
+
+    <!-- Form validation and dark mode script -->
+    <script type="text/javascript" src="js/script.js"></script>
+
 </div>
-
-
-<div class="pt-5 m-5">
-<p>Throughout my professional journey, including roles as an
-    Office Assistant at Green River College and a Generator &
-    HVAC Technician in the US Army, I have honed my analytical
-    and problem-solving abilities. I am currently pursuing a dual bachelor's degree in Software Development
-    & Cybersecurity.</p>
-</div>
-
-
-
-<footer>
-    <div class="start">
-        <h3>Start a project</h3>
-        <p>Interested in working together? We should queue up a chat.</p>
-        <button>Let's do this</button>
-    </div>
-
-    <div class="cols">
-        <div class="about-col">
-            <h3>Faison.</h3>
-            <p>Creative FullStack Developer</p>
-        </div>
-
-        <div class="links-col">
-            <h4>Useful Links</h4>
-            <a href="https://gene7.greenriverdev.com">Home</a>
-            <a href="projectPortfolio/Resume.html">Resume</a>
-            <a href="#">Portfolio</a>
-            <a href="projectPortfolio/contact.html">Contact</a>
-        </div>
-
-        <div class="links-col">
-            <h4>Social Media</h4>
-            <a href="https://www.linkedin.com/in/eugene-faison-399b83272">LinkedIn</a>
-            <a href="https://github.com/Gene7Him">GitHub</a>
-        </div>
-
-        <div class="news-col">
-            <h4>NewsLetter</h4>
-            <p>Enter your email and get notified about news, of.</p>
-
-            <form>
-                <input type="email" placeholder="Your email address">
-                <button><i class='bx bxl-telegram'></i></button>
-            </form>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-
-
-<!-- Form validation and dark mode script -->
-<script type="text/javascript" src="js/script.js"></script>
-
 </body>
 </html>
